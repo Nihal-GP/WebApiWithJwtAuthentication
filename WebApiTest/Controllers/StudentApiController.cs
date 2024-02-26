@@ -18,7 +18,7 @@ namespace WebApiTest.Controllers
 
         }
 
-        
+        [Authorize]
         [HttpGet]
         [Route("GetAllStudent")]
         public async Task<ActionResult<List<Student>>> GetAllStudent()
@@ -28,6 +28,7 @@ namespace WebApiTest.Controllers
 
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         
         public async Task<ActionResult<Student>> GetById(int id)
@@ -41,6 +42,7 @@ namespace WebApiTest.Controllers
 
         }
 
+        [Authorize]
         [HttpPost]
         
         public async Task<ActionResult<Student>> AddStudent(Student std)
@@ -50,6 +52,7 @@ namespace WebApiTest.Controllers
             return Ok(std);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         
         public async Task<ActionResult<Student>> UpdateStd(int id, Student std)
@@ -63,6 +66,7 @@ namespace WebApiTest.Controllers
             return Ok(std);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         
         public async Task<ActionResult<Student>> deleteStudent(int id)
